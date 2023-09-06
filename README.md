@@ -1,1 +1,49 @@
-# databaze
+# Úvod do databázových systémů
+
+- **databáze
+	- systém pro ukládání a následné vyhledávání dat
+	- chceme aby ukládání i vyhledávání byly co nejrychlejší
+	- příkladem je uložení všech dat do jedné složky
+		- pokud by ale dat/souborů bylo hodně, pak by člověk musel projít (nejhůř) všechny, než by našel ten správný
+		- jednoduchou optimalizací by bylo například uspořádat data podle kategorií do podsložek, pak by stačilo prohledat menší podsložku
+	- databází je hrozná spousta, jsou hodně používaný (lidi chtěj ukládat stuff) a je o tom velká věda
+	- i dnes vycházej stále nový, dneska jsou hot "vektorový" databáze pro neuronový sítě atd...
+- **pojmy**
+	- _entita_ - objekt jehož vlastnosti jsou v databázi (neuložíš celýho člověka ale jen třeba věk a pohlaví a jméno)
+	- _záznam_ (record) - jedna řádka tabulky, jedna "uložená entita", jedny data
+	- _atribut_ - jedna uložená vlastnost v jednom záznamu, v tabulce by to byl sloupec
+	- _klíč- - atribut, který má jedinečnou hodnotu pro každý záznam -> umožňuje identifikaci
+	- _index_ - způsob řazení tabulky, jedná se o pomocný soubor s řazením tabulky podle nějakého atributu, databáze se tedy nepřepisuje
+	- _metadata_ - data o datech - máš uloženou knihu v nějaký databázi, celou knihu, no a metadata jsou pak její název, autor, rok vydání atd. Data o datech
+- **relace**
+	- podmnožina kartézského součinu dvou množin
+		- kartézský součin je množina všech možných dvojic kde na prvním místě je jsou prvky jedné množiny a na druhém místě jsou prvky druhé množiny
+		- mějme množiny M1={a,b}, M2={1,2,3}, pak M1×M2 = {(a,1),(a,2),(a,3),(b,1),(b,2),(b,3)}
+	- řekněme že máš lidi {a,b} a vlastnosti {1,2,3}, pak relace {(a,1), (b,3)} znamená, že člověk a má vlastnost 1 a člověk b má vlastnost 3.
+	- relace se dá znázornit jako že se nakreslí ty dvě množiny a udělaj čáry mezi prvkama, který jsou v relaci
+- **SQL** (simple query language)
+	- jazyk pro interakcemi s databázema, každá databáze ho podporuje
+	- _keywords_
+		- ADD
+		- SELECT
+		- GET
+		- CREATE (DATABASE/TABLE/INDEX/...)
+		- DELETE
+		- DROP (COLUMN//DATABASE/INDEX/...)
+		- EXISTS
+		- FROM
+		- WHERE
+		- JOIN
+		- MIN/MAX/LN/COS/...
+	- _syntax_
+		- ```SELECT * FROM table_name``` - vrátí tabulku co se jmenuje table_name
+		- ```SELECT column1, column2 FROM table_name``` - vrátí vybrané sloupce tabulky table_name
+		- ```WHERE column1 = value``` - vrátí ty řádky tabulky, ve kterých je v daném sloupci daná hodnota
+		- ```WHERE col1 = value AND col2 = value``` - můžeme řetězit pomocí AND
+		- ```SUM(column1)``` - lze používat předdefinované matematické funkce
+		- [rychlý navod na zbytek](https://www.w3schools.com/sql/sql_quickref.asp)
+- **praxe**
+	- databázová tabulka
+	- formulář
+	- dotaz
+	- sestavy
